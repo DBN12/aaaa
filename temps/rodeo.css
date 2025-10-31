@@ -1,0 +1,682 @@
+A:link {
+	COLOR: blue;
+	TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: blue;
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red;
+	TEXT-DECORATION: underline
+}
+A.a2:link {
+	COLOR: black;
+	TEXT-DECORATION: none
+}
+A.a2:hover {
+	COLOR: white;
+	TEXT-DECORATION: none
+}
+A.a2:visited {
+	COLOR: black;
+	TEXT-DECORATION: none
+}
+
+
+A.a3:link, A.a3:visited, A.a3:hover {
+	COLOR: blue;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: verdana;
+}
+A.a3:hover {
+	COLOR: red;
+	TEXT-DECORATION: underline
+}
+H2 {
+	FONT-SIZE: 13pt;
+	COLOR: #000000;
+	LINE-HEIGHT: 15pt;
+	FONT-FAMILY: arial
+}
+H3 {
+	FONT-SIZE: 16px;
+	COLOR: #000000;
+	LINE-HEIGHT: 18px;
+	FONT-FAMILY: arial
+}
+P {
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	LINE-HEIGHT: 13px;
+	FONT-STYLE: normal;
+	FONT-FAMILY: verdana;
+	TEXT-ALIGN: justify
+}
+
+
+.td2 {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	FONT-FAMILY: arial
+}
+.td_r {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	FONT-FAMILY: arial
+}
+
+.table_login_green, .table_login_red  {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10px;
+	COLOR: #ffffff;
+	FONT-FAMILY: verdana;
+	background-color: green;
+	border: 2px solid black;
+	padding: 3px;
+}
+.table_login_red  {
+	background-color: red;
+}
+
+.td_menu {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10px;
+	COLOR: #ffffff;
+	FONT-FAMILY: verdana;
+	TEXT-ALIGN: center;
+	cursor: pointer; cursor: hand;
+}
+.td_vanlig {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	LINE-HEIGHT: 12px;
+	FONT-FAMILY: verdana;
+	BACKGROUND-COLOR: white
+}
+.td_spalt {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	LINE-HEIGHT: 12px;
+	FONT-FAMILY: verdana;
+	width: 400px;
+	margin-bottom: 10px;
+}
+.td_tabell {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 10px;
+	COLOR: #000000;
+	FONT-FAMILY: arial
+}
+.rubrik {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14px;
+	COLOR: #000000;
+	FONT-FAMILY: arial
+}
+.rubrik2 {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	LINE-HEIGHT: 12px;
+	FONT-FAMILY: arial
+}
+.ari, .inputNumber {
+	BORDER-TOP-WIDTH: 1px;
+	FONT-WEIGHT: normal;
+	BORDER-LEFT-WIDTH: 1px;
+	FONT-SIZE: 12px;
+	BORDER-LEFT-COLOR: #ffffff;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-BOTTOM-COLOR: #ffffff;
+	COLOR: #000000;
+	BORDER-TOP-COLOR: #ffffff;
+	FONT-FAMILY: arial;
+	TEXT-ALIGN: right;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-RIGHT-COLOR: #ffffff;
+	width:35px;
+	BACKGROUND-COLOR: #FDFDFD;
+}
+
+.ari2, .ari2disabled {
+	BORDER-TOP-WIDTH: 1px;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-LEFT-WIDTH: 1px;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-LEFT-COLOR: #ffffff;
+	BORDER-BOTTOM-COLOR: #ffffff;
+	BORDER-TOP-COLOR: #ffffff;
+	BORDER-RIGHT-COLOR: #ffffff;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	FONT-FAMILY: arial;
+	TEXT-ALIGN: left;
+}
+
+.inputNumber {
+	width:60px;
+}
+
+.ari2disabled {
+	BACKGROUND-COLOR: #D4D4D4;
+}
+
+.comment, .comment_on {
+	BORDER-TOP-WIDTH: 1px;
+	FONT-WEIGHT: normal;
+	BORDER-LEFT-WIDTH: 1px;
+	FONT-SIZE: 12px;
+	BORDER-LEFT-COLOR: #ffffff;
+	BORDER-BOTTOM-WIDTH: 1px;
+	BORDER-BOTTOM-COLOR: #ffffff;
+	COLOR: #000000;
+	BORDER-TOP-COLOR: #ffffff;
+	FONT-FAMILY: arial;
+	TEXT-ALIGN: left;
+	BORDER-RIGHT-WIDTH: 1px;
+	BORDER-RIGHT-COLOR: #000000;
+
+	BACKGROUND-COLOR: #FDFDFD;
+	width: 300px;
+}
+
+.comment_on {
+	BORDER-TOP-WIDTH: 2px;
+	FONT-STYLE: italic;
+	BORDER-BOTTOM-WIDTH: 0px;
+
+	BACKGROUND-COLOR: #FFFFF4;
+}
+
+.bsum {
+	
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	
+	COLOR: #000000;
+	
+	FONT-FAMILY: arial;
+	BACKGROUND-COLOR: #D4D4D4;
+	border-width: 0px;
+	TEXT-ALIGN: center;
+	WIDTH: 35px
+}
+.rsum {
+	BORDER-RIGHT: 0px transparent;
+	BORDER-TOP: 0px solid;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	BORDER-LEFT: 0px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: 0px solid;
+	FONT-FAMILY: arial;
+	BACKGROUND-COLOR: #D4D4D4;
+	TEXT-ALIGN: center;
+	width:30px
+}
+.boxes, SELECT, optgroup {
+	BORDER-RIGHT: #ffffff 0px solid;
+	BORDER-TOP: #ffffff 0px solid;
+	FONT-SIZE: 12px;
+	FONT-FAMILY: verdana
+	FONT-WEIGHT: normal;
+	BORDER-LEFT: #ffffff 0px solid;
+	BORDER-BOTTOM: #ffffff 0px solid;
+	BACKGROUND-COLOR: #ffffff
+}
+
+optgroup {
+	FONT-SIZE: 12px;	
+	font-style: italic;
+}
+
+.ari_on {
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+
+	BORDER-LEFT-WIDTH:   2px;
+	BORDER-TOP-WIDTH:    2px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	BORDER-RIGHT-WIDTH:  1px;
+
+	BORDER-BOTTOM-COLOR: #000000;
+	BORDER-LEFT-COLOR: #000000;
+	BORDER-RIGHT-COLOR: #ffffff;
+	BORDER-TOP-COLOR: #000000;
+
+	BACKGROUND-COLOR: #FFFFF4;
+
+	COLOR: #000000;
+	FONT-FAMILY: arial;
+	TEXT-ALIGN: right;
+
+	width:34px
+}
+
+INPUT {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10px;
+	FONT-FAMILY: verdana
+}
+
+.statusbar, .statusbar_on {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	FONT-FAMILY: arial;
+	COLOR: red;	
+	BACKGROUND-COLOR: #D4D4D4;
+	
+	border-top:       1px solid  #808080;
+	border-left:      1px solid  #808080;
+	border-bottom:    1px solid  white;
+	border-right:     1px solid  white;
+}
+
+.statusbar_on {
+	BACKGROUND-COLOR: lightyellow;	
+	border-top:       1px solid  #808080;
+	border-left:      1px solid  #808080;
+	border-bottom:    1px solid  white;
+	border-right:     1px solid  white;
+}
+
+.outerBorder {		
+	position: static;
+	border-left:      1px solid  menu;
+	border-top:       1px solid  menu;	
+	border-bottom:    1px solid  black;
+	border-right:     1px solid  black;		
+	background-color: #D4D4D4;	
+}
+
+.innerBorder {
+	border-top:       1px solid  white;
+	border-left:      1px solid  white;
+	border-bottom:    1px solid  #808080;
+	border-right:     1px solid  #808080;
+	padding: 2px;
+}
+
+.insetBorder {
+	border-top:       1px solid  #808080;
+	border-left:      1px solid  #808080;
+	border-bottom:    1px solid  white;
+	border-right:     1px solid  white;
+	padding: 0px;
+	height: 16px;
+}
+
+.td_menu_red a:link, .td_menu_red a:visited, .td_menu_green a:link, .td_menu_green a:visited {
+	display: block;
+	COLOR: black;
+	TEXT-DECORATION: none;
+  width: 70px;
+	background-color: red;
+	padding: 1px 3px 1px 3px;
+	border: 1px solid black;
+	font-size: 10px;
+	font-family: Verdana;
+	font-weight:  bold;
+}
+
+.td_menu_red a:hover {	
+	TEXT-DECORATION: none;
+	COLOR: white;	
+	background-color: #FF8888;
+}
+
+.td_menu_green a:link, .td_menu_green a:visited{
+	background-color:#A0A0A0;
+}
+
+.td_menu_green a:hover {	
+	COLOR: white;	
+	background-color: #949494;
+}
+
+.tr_header {
+	FONT-SIZE: 10px;
+	FONT-WEIGHT: bold;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	padding-left: 2px;
+}
+
+.table_border, .table_border_form, .table_invoice {
+	background-color: lightgrey;
+	border: 1px solid black;
+}
+
+.table_border tr td {
+	background-color: white;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	
+	/*
+	border-right: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;	
+	padding-top: 1px;
+	padding-bottom: 1px;
+	*/
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.table_border .tr_header td {
+	background-color: lightgrey;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	padding-left: 5px;
+	padding-right: 5px;
+	/*
+	border-right: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+	*/
+}
+
+
+.table_form {
+	background-color: lightgrey;
+	border: 1px solid black;
+}
+
+.table_form tr td {
+	FONT-SIZE: 10px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+
+.table_gant {
+	background-color: #808080;
+	border: 1px solid black;
+}
+
+.table_gant tr td {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: verdana;	
+}
+
+.table_gant .tr_header {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: verdana;	
+	font-weight: bold;
+}
+
+.table_border .tr_bold td {
+	FONT-SIZE: 10px;
+	font-weight: bold;	
+	background-color: lightgrey;		
+}
+
+.title_bar tr td {
+	COLOR: white;
+	FONT-SIZE: 12px;
+	font-weight: bold;
+	font-family: arial;
+	background-color: #000066;	
+}
+
+.td_form {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	background-color: lightgrey;
+	
+}
+
+.table_border_form tr td {
+	FONT-SIZE: 10px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+	
+}
+
+html, body {
+				height: 100%;
+			}
+
+#container {	
+	position: relative;
+	min-height: 100%;
+	height: 100%;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	height: auto;
+	z-index: 1;
+	margin-top: 30px;
+}
+
+html>body #container {
+	height: auto;
+}
+
+#content {
+	position: relative;
+	margin-top: 50px;
+	padding: 10px;
+	padding-bottom: 0px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	padding: 10px;
+	left: 40%;
+	color: #000000;
+	padding-bottom: 0;
+	FONT-SIZE: 10px;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+}
+
+#inloggad {
+	background-color: white;
+	border: 1px solid red;
+	
+	font-size: 11px;
+	font-family: verdana;	
+	font-color: red;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+
+#login_message {
+	position: absolute;
+	top: 50px;
+	left: 40%;
+	color: red;
+	FONT-SIZE: 14px;
+	FONT-FAMILY: verdana;
+	font-weight: bold;
+				
+}
+
+#period {
+	font-size: 12px; 
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	FONT-FAMILY: verdana;
+}
+
+#week {
+FONT-FAMILY: verdana;
+	font-size: 16px; 
+	color: black;
+	font-style: normal;
+	font-weight: bold;
+}
+
+
+#layer1, #layer2 {
+	visibility: normal;
+	position: relative; 
+	margin-top: 20px;
+}
+
+#layer1 {
+	position:absolute; 
+	visibility: hidden;
+	z-index:20; 
+	left:20%; 
+	top: 20%;	
+}
+
+.table_yearproject {
+	border: 1px solid black;
+}
+
+.table_yearproject tr td {
+	font-size: 11px; 
+	FONT-FAMILY: verdana;
+	padding: 1px;
+	padding-left: 3px;
+}
+
+.table_yearproject tr .td_projline {
+	padding-left: 20px; 
+	font-style: italic;
+}
+
+.tr_header_proj td { 
+	font-weight: bold;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+
+.table_invoice tr td {
+	background-color: white;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;	
+	border-left: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;	
+	padding: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.table_invoice tr .td_invoice {
+	background-color: white;
+	FONT-SIZE: 11px;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	border-bottom: 1px solid white;	
+}
+
+.table_invoice .tr_header td {
+	background-color: lightgrey;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	COLOR: #000000;
+	FONT-FAMILY: verdana;
+	padding-left: 5px;
+	padding-right: 5px;
+
+	border-left: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+
+}
+
+#statusbar2 {
+	font-size: 11px; 
+	font-family: arial;  
+	font-weight: bold; 
+	border: 1px solid #808080;
+	background-color: lightgrey;  
+	color: red; 
+	padding-left: 5px;
+}
+
+#statusbar3 {
+	text-align: right; 
+	font-weight: bold; 
+	color: green; 
+	width: 50px; 
+	
+	border-top:       1px solid  #808080;
+	border-left:      1px solid  #808080;
+	border-bottom:    1px solid  white;
+	border-right:     1px solid  white;
+	
+}
+
+.sql {
+	width: 600px;
+	padding: 4px;
+	border: 1px dotted red;
+	background-color: white;	
+}
+
+#adminMenu {
+	position: fixed; 
+	top:0px; 
+	left:15px;
+	z-index: 2;
+	background-color:  #FFFF99;
+}
+
+.help {
+	border: 0px solid red;
+	position:absolute; 
+	top: 0px;
+	right: 0px;
+	background-image: url(help.gif);
+	width: 35px;
+	height: 16px;
+	cursor: hand;
+}
+
+.header {  
+	margin-top: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	border: 1px solid red;
+	FONT-SIZE: 13pt;
+	COLOR: #000000;
+	FONT-FAMILY: arial;
+	font-weight: bold;
+	width: 500px;	
+}
+
+
+#info {
+	position:absolute; 
+	z-index:20; 
+	visibility: normal;  
+	left:550px; 
+	top: 20px;
+	width: 250px;
+	background-color: white;
+	border: 1px solid red;
+	padding: 3px;
+	
+	font-size: 11px;
+	font-family: verdana;	
+	
+}
+
+#transmitter {
+	display: none;
+}
+
+#logintable {
+	position: absolute;
+	left: 40px;
+	top: 80px;
+}

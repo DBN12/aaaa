@@ -1,0 +1,9 @@
+Order deny,allow
+Deny from All
+AuthType Basic
+AuthName "Bienvenue sur mon serveur web"
+AuthBasicProvider ldap
+AuthzLDAPAuthoritative off 
+AuthLDAPURL ldap://192.168.98.31:389/"ou= CBL consulting,ou=Users,ou=HR-Path,dc=HR-PATH,dc=LOCAL"
+Require ldap-group cn=Count LDAP RO,ou=Service Accounts,ou=IT,ou=HR-Path,dc=HR-PATH,dc=LOCAL
+Require valid-user

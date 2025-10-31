@@ -1,0 +1,126 @@
+/* GENERAL */
+body {text-align:center;margin-top:0px; padding-bottom:20px; font-family:arial ;font-size:x-small;background-color:#DDDDFF;}
+.bloctext {color:#337799; font-size:x-small; text-align:justify; padding:10px; margin:0px}
+.bloctext a {color:#556699;font-weight:bold;text-decoration:underline}
+.bloctext a:hover {text-decoration:none;}
+.bloctext a:visited {color:#556699;}
+.gros {color:#113388; font-size:x-small; font-weight:bold;margin:5px}
+.petittext {font-size:xx-small;color:#337799; margin:0px; padding:5px; text-align:justify}
+
+
+/* Haut de page*/
+.cadrehaut {border: 1px solid white ; border-top:0px; background:white;}
+.bandegauche {background:#3399DD; width:14px; }
+.portrait {border-top:0px; background:url('images/mapfond-gauche.png') no-repeat right top #FFF;;vertical-align:middle;padding-right:60px;padding-left:50px}
+.bandeau {vertical-align:bottom; background:url('images/mapfond-droite.png') no-repeat left top #FFF;}
+/* FIN Haut de page*/
+
+/* MENU horizontal */
+ul#menu{ width:550px;border-top: 1px solid white; margin:0px; margin-top:33px; padding:0px;  list-style:none;  background:#3399DD;  font-size:10px;}
+ul#menu li {float:left;  display:block;   background:#3399DD;  height:20px}
+ul#menu li a {display:block; color:white; font-weight:bold; margin:0px;padding:10px; padding-top:4px;padding-bottom:4px; text-decoration:none}
+ul#menu li a:hover {background-color:#FFBB00; color:white; border:none}
+ul#menu ul {width:170px; position:absolute;  list-style:none; margin:0px; padding:0px; padding-bottom:5px; z-index:1;}
+ul#menu li ul {display:none}
+ul#menu ul#grand {width:200px; position:absolute; list-style:none; margin:0px; padding:0px; padding-bottom:5px; z-index:1;}
+ul#menu li:hover>ul {display:block}
+ul#menu ul ul {top:0px;  left:155px;  z-index:100; }
+ul#menu ul li {background:#3399FF; position:relative;  float:none;  margin:0px;  padding:0px; _display:inline}
+ul#menu ul li {	background-color: #3399FF; filter:alpha(opacity=90); -moz-opacity:0.5; opacity: 0.5;}
+ul#menu ul li a {font-weight:normal; font-size:10px; display:block; margin:0px; padding:0px; width:170px; border:none}
+ul#menu ul li a span {display:block; width:154px; _width:160px; padding:2px 6px; margin:0px 2px;  border:none;	cursor:hand;}
+ul#menu ul#grand li a {font-size:10px; display:block; margin:0px; padding:0px; width:200px; border:none;}
+ul#menu ul#grand li a span {display:block; width:180px; _width:190px; padding:2px 6px; margin:0px 2px;  border:none; cursor:hand;}
+ul#menu ul li a:hover>span { color:#FFFFFF; border:none}
+ul#menu ul li.first {padding-left:0px}
+ul#menu ul li.first a {padding-top:2px;}
+ul#menu ul li.last {padding-right:0px}
+ul#menu ul li.last a {padding-bottom:2px}
+/* FIN MENU HORIZONTAL */
+
+
+/* CORPS */
+table.cadrecorps {height:90%;}
+table.cadrecorps tr td.col1 {width:198px; background:#EEEEEE;border-left:1px solid white;height:100%}
+table.cadrecorps tr td.col2 {width:350px; background:#FFFFFF;}
+table.cadrecorps tr td.col3 {width:200px; background:#FFFFFF;}
+table.cadrecorps tr td.col2bis {width:550px; background:#FFFFFF; } /* Si il n'y a que 2 colonnes*/
+#corps {text-align:left;width:750px}
+.hash1 {width:16px; background:#CCCCFF url('images/hachures.png') 3px 0px; height:10px}
+.hash2 {width:184px; background:#EEEEEE url('images/hachures.png') 2px 0px; height:10px}
+.hash3 {width:550px; background:#FFFFFF url('images/hachures.png') top ; height:10px}
+.hashm { background:#CCCCFF;}
+.magnisol {background:white; text-align:center}
+.copyright {background:white;text-align:right; color:BBBBDD; font-size:xx-small; font-weight:bold}
+.bandeverticale {background:#CCCCFF;height:255px;width:15px;}
+
+
+/* Accueil */
+.imageaccueil {width:200px;  height:145px; background: url('images/photo.jpg') no-repeat; border-bottom:1px solid white}
+.pictoaccueil {width:15px; height:15px; background: #3399DD url('images/picto.png') no-repeat center center; }
+.decouvreztitre {width:165px; font-family: arial narrow; padding-left:10px; background:orange; font-size:small;color:white}
+.decouvrezliste {width:165px; height:100%; vertical-align:top; padding:0px;spacing:0px;}
+.decouvrezliste ul {font-size:xx-small; margin:0px; padding:3px;list-style-position:outside}
+.decouvrezliste ul li {color:orange;margin-left:15px;margin-top:10px;list-style-type:square}
+.decouvrezliste ul li span {color:#556699;}
+.decouvrezliste ul li span.active {text-decoration:underline;}
+.decouvrezliste ul li span a {color:#556699;text-decoration:underline;}
+.decouvrezliste ul li span a:hover {text-decoration:none}
+.decouvrezliste ul li a {color:#556699;text-decoration:none;}
+.decouvrezliste ul li a:hover {text-decoration:underline}
+
+.cadreliste {height:144px; background:#BBBBDD; font-size:x-small}
+.cadreliste dt {color:#113388; font-size:x-small; font-weight:bold; padding:0px;  margin:10px; margin-top:20px;}
+.cadreliste dd {color:white; font-weight:bold; padding:10px;padding-top:5px; margin:0px}
+.cadreliste dd ul {padding:0px; margin:0px; margin-left:20px; list-style-position:outside; list-style-image:url('images/puce.png')}
+
+.evenement {font-size:x-small; border-top:3px solid orange;border-left:1px solid #CCEEEE;padding-left:3px}
+.evenement dt {padding-left:35px; margin-bottom:10px; background: url('images/fleche.png') no-repeat 0px 3px;margin-top:10px; color:5566AA; font-size:x-small; font-weight:bold;}
+.evenement dd {margin:0px;padding:0px;}
+.evenement dd ul {padding:10px; padding-left:30px; list-style-type:square; color:orange;margin:0px;list-style-position:outside; font-size:xx-small;}
+.evenement dd ul li {margin-bottom:10px; padding-bottom:10px;border-bottom: 3px dotted #CCCCCC}
+.evenement a {color:#556699;text-decoration:underline;}
+.evenement a:hover {text-decoration:none}
+
+.flashhrqm {text-align:center; width:100%}
+
+/* Developpement */
+.evenement dd p {font-size:xx-small;color:#9999CC}
+.evenement dd span {font-size:xx-small;color:#556699; }
+
+/* Service */
+.serviceliste li {margin-bottom:5px;}
+.serviceliste li a {color:#556699;text-decoration:underline;}
+.serviceliste li a:hover {text-decoration:none;}
+
+/* Outils */
+.listeoutils {margin:0px; font-size:x-small;  padding-left:0px; width:250px}
+.listeoutils dt {padding-top:10px;  height:60px; font-size:x-small; font-weight:bold}
+.listeoutils dt a {color:#556699; text-decoration:none;}
+.listeoutils dt a:hover {text-decoration:underline}
+.listeoutils dt a:visited {color:#556699}
+.listeoutils dd {text-align:justify;padding-left:0px;margin:0px;font-size:xx-small}
+
+.titreoutils {margin:5px; padding-left:10px; width:100%; height:60px; border:1px solid orange; border-right:0px; border-left:0px}
+.titreoutils span {color:#36F;font-weight:bold; font-size:x-small}
+
+.listeservices {margin:0px; font-size:x-small; color:#36F; }
+.listeservices a {font-weight:bold; text-decoration:none;}
+.listeservices a:visited {color:#36F;}
+.listeservices a:hover {text-decoration:underline}
+.listeservices span {font-weight:bold;font-size:x-small}
+
+.hrsmb tr td u {text-decoration:none; font-weight:bold}
+.hrsmb tr td.titre1 {font-size:small; text-align:center; border:1px solid #36F; width:350px;background:url('images/barreorange3.png') left repeat-y;color:#556699;}
+.hrsmb tr td.titre2 {font-size:small; text-align:center; border:1px solid #36F; width:350px;background:url('images/barrebleue4.png') right repeat-y;color:#556699;}
+.hrsmb tr td.liste1 {font-size:x-small;border:1px solid #36F; width:350px;background:url('images/barreorange3.png') left repeat-y;color:#556699;}
+.hrsmb tr td.liste2 {font-size:x-small;border:1px solid #36F; width:350px;background:url('images/barrebleue4.png') right repeat-y;color:#556699;}}
+.hrsmb tr td.liste3 {border:0px; width:20px}
+
+
+dl.consultant {clear:both;background:#FFF; border:1px solid orange; border-right:0px; border-left:0px;margin:10px;margin-bottom:20px;padding:5px;font:x-small}
+dl.consultant dd {margin:0px;padding:0px;color:#337799;}
+dl.consultant dd img{ float:left; vertical-align:top; margin:10px; margin-bottom:0px; border:1px solid black;}
+dl.consultant dd div{color:#337799;font-style: italic;margin:5px}
+dl.consultant dd ul{color:#337799;;list-style-position:outside}
+dl.consultant dd p{color:#337799;;margin:0px}

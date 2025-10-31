@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Installing Rodeo Time Reporting System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	width: 500px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+.code {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	background-color: #FFFFCC;
+	width: 400px;
+	font-weight: bold;
+}
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+h2 {
+	margin-top: 30px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+h3 {
+	margin-top: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	font-style: italic;
+	margin-left: 10px;
+}
+.code2 {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	background-color: #FFFFCC;
+	width: 400px;
+	font-weight: normal;
+	border: 1px solid #FF0000;
+	padding: 5px;
+}
+.style1 {font-family: "Courier New", Courier, mono}
+
+-->
+</style>
+</head>
+
+<body>
+<h1>Installing Rodeo Time Reporting System
+</h1>
+<h2>Prerequisites</h2>
+<p><strong>Perl</strong> with DBI installed (DBD::ODBC or DBD::MYSQL additional modules installed too)<br>
+  <strong>MySql</strong> or <strong>MS SQL</strong><br>
+  <strong>Webserver</strong> (Apache or IIS)</p>
+<h2>Setting up the database</h2>
+<p>In the file <em>rodeo_db.pl</em> set the variable <strong>$MYSQL</strong> to 0 or 1 according to if
+  the system is using MySQL or MS SQL. Change the variable <strong>$DSN</strong> to the name
+  of the database or ODBC-connection (create a system DSN first if you are using ODBC).
+  Set<strong> $opt_user</strong> and <strong>$opt_password</strong>.
+  Set the variable <strong>$host</strong> to the name of the mysql-host</p>
+<p><strong>Example: script-segmen</strong>t </p>
+<div class=code2>
+<em># database settings
+<br>
+</em>my $MYSQL        = 0;<br>
+my $DSN          = 'rodeo';<br>
+my $host         = 'localhost';<br>
+my $opt_user     = 'sa' ;<br>
+my $opt_password = 'summer' ;</div>
+<p>run the script in a terminal with</p>
+<div class=code>&gt;perl rodeo_db.pl s<br>
+&gt;perl rodeo_db.pl y 2005</div>
+<p>which creates the tables. The reports is saved in one table for each year so
+  you may need to create tables for succeding years later, i.e.
+  <br>
+<div class=code>&gt;perl rodeo_db.pl y 2006...</div>
+<h2>Installing the script</h2>
+  <p>
+The variable <strong>$RELPATH</strong> is the location of the images, stylesheets and javascript-files relative to the location of rodeo.pl. Like if the script is in <em>/cgi-bin</em> and the rest of the files in the default webfolder <em>htdocs/,</em> the relative path is<strong> '..'</strong> (which is default). If all the files are placed i n the same location the path should be set to<strong> '.'</strong>. </p>
+  <h3>Set up in Apache</h3>
+<p>put <em>rodeo.pl</em> in the <em>cgi-bin/</em> folder and the rest of the files in <em>htdocs</em>/</p>
+<p>some variables in <em>rodeo.pl</em> needs to be modified</p>
+<p>the top line should point to where perl is installed<br>
+  i.e. in Linux
+</p>
+<div class=code2><em>#! /usr/bin/perl</em></div>
+<p>on Windows<br>
+<div class=code2><em>
+#! c:\perl\bin\perl</em></div>
+<p><strong>$MYSQL, $DSN, $optuser, $optpassword</strong> as above...
+  also set <strong>$superuser_password</strong>.
+</p>
+<p>browse to <em>/cgi-bin/rodeo.pl</em></p>
+<p>login as <strong>superuser</strong> in the <em><strong>manage projects</strong></em>.</p>
+<p>Create a new invoice manager, logout and login as that user and set up the rest of the
+  users, customers and projects...</p>
+<h3>Set up in IIS</h3>
+<p> pack up the zip in a folder<em> rodeo/</em> (modify variables in script according to
+    instructions above)
+    Create a virtual directory to <em>/rode</em>o
+    browse to /rodeo and login as superuser </p>
+<h2>Appendix - setting up Perl on Windows</h2>
+<p>Install the Activestate distribution, <a href="www.activestate.com">www.activestate.com</a> </p>
+<p>To install necessary database modules, DBI, run <em>ppm.bat</em>, which is found in the <em><strong>perl\bin</strong></em> folder</p>
+<div class=code>
+  <p>&gt;install DBI </p>
+  <p>&gt;install DBD::ODBC</p>
+  <p>&gt;install DBD::MYSQL</p>
+</div>
+
+<h3>Configure Perl Script Mapping for IIS</h3>
+Click Start , click Programs , click Administrative Tools , and then click Internet Information Services .
+<p>Right-click a Web site that you want to enable PERL for, and then click Properties . </p>
+<p>Click the Home Directory tab. </p>
+<p>Click Configuration . </p>
+<p>Click Add . </p>
+<p>Type the following for Executable : full path to perl.exe <br>
+  <span class="style1">c:\perl\bin
+\perl.exe %s %s</span><br>
+NOTE : The &quot;%s %s&quot; is case-sensitive (for example, &quot;%S %S&quot; does not work). </p>
+<p>For Extension , type <strong>.pl<br>
+</strong>NOTE : Make sure that the All Verbs option is selected for full functionality, and that the Script Engine check box is selected. </p>
+<p></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
