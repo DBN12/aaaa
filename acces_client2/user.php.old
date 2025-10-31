@@ -1,0 +1,275 @@
+<?php
+	$db_connect = null;
+	$tab_projet = array();
+	$ligne = null;
+	$db_requete = null;
+	$db_resultat = null;
+
+	$db_connect = mysqli_connect("localhost", "rodeo_user", "123RoDeO_UsEr/456");
+//	mysqli_select_db('hrpic',$db_connect);
+?>
+<?php
+//	print_r($_GET);
+	$hrpic_action = $_GET["hrpic_action"];
+	if (!empty($hrpic_action)) {
+		switch($hrpic_action) {
+			case "password_update" :
+				$db_requete = "UPDATE hrpic.user ";
+				$db_requete.= "SET password = '".$_GET["hrpic_password"]."', date_modif = now() ";
+				$db_requete.= "WHERE user = '".$_GET["hrpic_user"]."'";
+				$db_requete.= "AND environnement_id = '".$_GET["hrpic_environnement_id"]."';";
+				break;
+			case "user_add" :
+				if(!empty($_GET["hrpic_user"])) {
+					$db_requete = "INSERT INTO hrpic.user ";
+					$db_requete.= "VALUES ('".$_GET["hrpic_environnement_id"]."', '".$_GET["hrpic_user"]."', '".$_GET["hrpic_password"]."', now());";
+				}
+				break;
+
+			case "user_delete" :
+
+				if(!empty($_GET["hrpic_user"])) {
+					$db_requete = "DELETE FROM hrpic.user ";
+					$db_requete.= "WHERE environnement_id = '".$_GET["hrpic_environnement_id"]."'";
+
+					$db_requete.= "AND user = '".$_GET["hrpic_user"]."';";
+				}
+
+				break;
+		}
+//		print $db_requete;
+		if ($db_requete != null)
+			$db_resultat = mysqli_query($db_connect, $db_requete);
+
+		if (!empty($_GET["hrpic_environnement_id"]))
+
+			header("Location: ./user.php?ligne=l_".$_GET["hrpic_environnement_id"]."_".$_GET["hrpic_user"]);
+
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<title>Intranet de CBL Consulting Nord - Acc&egrave;s client</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="expires" content="0" />
+<script type="text/javascript">
+<!--
+	function password_update(environnement_id, user) {
+		var password_nouveau;
+
+		password_nouveau = prompt("Nouveau mot de passe :");
+		if((password_nouveau != null) && (password_nouveau != ''))
+			window.open('./user.php?hrpic_action=password_update'+'&hrpic_user='+user+'&hrpic_environnement_id='+environnement_id+'&hrpic_password='+password_nouveau, '_self');
+	}
+
+
+	function user_delete(environnement_id, user) {
+		var confirmation;
+
+		confirmation = confirm("Voulez-vous vraiment effacer l'utilisateur " + user + "?");
+		if(confirmation)
+			window.open('./user.php?hrpic_action=user_delete'+'&hrpic_user='+user+'&hrpic_environnement_id='+environnement_id, '_self');
+	}
+
+
+	function user_add(environnement_id) {
+
+		var i = 0;
+
+		var liste_environnement = window.document.forms["f_user_add"].elements["hrpic_environnement_id"];
+
+
+		while(liste_environnement.options[i].value != environnement_id)
+
+			i++;
+
+
+		liste_environnement.options[i].selected = true;
+
+		window.document.forms["f_user_add"].elements["hrpic_user"].focus();
+
+	}
+
+
+	function change_couleur_ligne(ligne_id, focus) {
+
+		var ligne = window.document.getElementById(ligne_id);
+
+
+		if(ligne.bgColor == "")
+
+			ligne.bgColor = "#98FB98";
+
+		else
+			ligne.bgColor = "";
+
+		if(focus == 1)
+
+			ligne.scrollIntoView("true");
+	}
+//-->
+</script>
+<style type="text/css">
+<!--
+	body,td,div,p,a {
+		font-family: arial,sans-serif; size : 9px;
+	}
+	a, a:link, a:visited, a:active {
+		color: blue;
+		text-decoration: none;
+	}
+	a:hover {
+		color: blue;
+		text-decoration: underline;
+	}
+	a img {
+		border: 0;
+	}
+	.header {
+		font-size:-1;
+		font-weight: bold;
+	}
+	.title {}
+	td .description {
+		color: #333333;
+		font-size: small;
+	}
+	tr {
+		height:35px;
+		background-color:none;
+	}
+	tr th {
+		background-color:#DDD;
+	}
+	tr:hover {
+		background-color:chartreuse;
+		//font-weight: bold;
+	}
+-->
+</style>
+</head>
+
+<body <?php echo ((!empty($_GET["ligne"]))?'onload="javascript:change_couleur_ligne(\''.$_GET["ligne"].'\', 1);"':''); ?>>
+<?php
+	$db_requete = "SELECT e.id AS e_environnement_id, e.libelle AS machine, p.description AS client, t.libelle AS type, u.*, v.libelle AS version ";
+	$db_requete.= "FROM rodeo.projects p, hrpic.env_type t, hrpic.environnement e ";
+	$db_requete.= "LEFT JOIN hrpic.user u ON (e.id = u.environnement_id) ";
+	$db_requete.= "LEFT JOIN hrpic.version_sap v ON (e.version_id = v.id) ";
+	$db_requete.= "WHERE p.custid = 1 ";
+	$db_requete.= "AND e.projet_id = p.projid ";
+	$db_requete.= "AND e.env_type_id = t.id ";
+//	$db_requete.= "AND e.id = u.environnement_id ";
+	$db_requete.= "ORDER BY client, t.id, machine, u.user ;";
+
+//	print $db_requete;
+	$db_resultat = mysqli_query($db_connect, $db_requete);
+?>
+<div>
+	<br />
+	<table border="0" cellpadding="5">
+		<colgroup  style="background-color:yellow;" >
+			<col width="30" />
+			<col width="250"/>
+			<col width="180" />
+			<col width="100" />
+		</colgroup>
+		<colgroup>
+			<col width="80" />
+			<col width="135" />
+			<col width="135" />
+			<col width="30" />
+			<col width="170" />
+		</colgroup>
+		<thead>
+		<tr>
+			<th>&nbsp;<br />&nbsp;</th>
+			<th>Client</th>
+			<th>Type</th>
+			<th>Version</th>
+			<th>ID Syst.</th>
+			<th>User</th>
+			<th colspan="2">Password</th>
+			<th>Date derni&egrave;re modif</th>
+		</tr>
+		</thead>
+		<tbody>
+<?php while ($ligne = mysqli_fetch_assoc($db_resultat)): ?>
+<?php //print_r($ligne); ?>
+		<tr id="l_<?php echo $ligne["e_environnement_id"]; ?>_<?php echo $ligne["user"]; ?>" onclick="javascript:change_couleur_ligne('l_<?php echo $ligne["e_environnement_id"]; ?>_<?php echo $ligne["user"]; ?>', 0);">
+			<td>&nbsp;</td>
+			<td><?php echo htmlentities($ligne["client"]); ?></td>
+			<td><?php echo htmlentities($ligne["type"]); ?></td>
+			<td><?php echo htmlentities($ligne["version"]); ?></td>
+			<td><?php echo htmlentities($ligne["machine"]); ?></td>
+			<td><?php echo htmlentities($ligne["user"]); ?></td>
+			<td><?php echo htmlentities($ligne["password"]); ?></td>
+			<td>
+<?php if (!empty($ligne["user"])): ?>
+				<a href="javascript:password_update('<?php echo $ligne["e_environnement_id"]; ?>', '<?php echo $ligne["user"]; ?>');"><img src="../img/b_edit.png" alt="Modifier" title="Modifier" /></a>
+
+				<a href="javascript:user_delete('<?php echo $ligne["e_environnement_id"]; ?>', '<?php echo $ligne["user"]; ?>');"><img src="../img/b_drop.png" alt="Supprimer" title="Supprimer" /></a>
+
+<?php else: ?>
+
+				<a href="javascript:user_add('<?php echo $ligne["e_environnement_id"]; ?>');"><img src="../img/eclair.gif" alt="Ajouter" title="Ajouter" /></a>
+<?php endif; ?>
+			</td>
+			<td><?php echo htmlentities($ligne["date_modif"]); ?></td>
+		</tr>
+<?php endwhile; ?>
+		</tbody>
+	</table>
+<form name="f_user_add" action="./user.php">
+	<table border="0" cellpadding="5">
+		<colgroup  style="background-color:yellow;" >
+			<col width="30" />
+			<col width="250"/>
+			<col width="180" />
+			<col width="100" />
+		</colgroup>
+		<colgroup>
+			<col width="80" />
+			<col width="135" />
+			<col width="135" />
+			<col width="30" />
+			<col width="170" />
+		</colgroup>
+		<tr>
+			<td><input type="image" src="../img/eclair.gif" alt="Ajouter" title="Ajouter" /></td>
+			<td colspan="3">
+<?php
+
+	$db_requete = "SELECT e.id AS environnement_id, e.libelle AS machine, p.description AS client, t.libelle AS type, v.libelle AS version ";
+	$db_requete.= "FROM rodeo.projects p, hrpic.env_type t, hrpic.environnement e ";
+	$db_requete.= "LEFT JOIN hrpic.version_sap v ON (e.version_id = v.id) ";
+	$db_requete.= "WHERE p.custid = 1 ";
+	$db_requete.= "AND e.projet_id = p.projid ";
+	$db_requete.= "AND e.env_type_id = t.id ";
+	$db_requete.= "ORDER BY client, t.id, machine ;";
+
+//	print $db_requete;
+	$db_resultat = mysqli_query($db_connect, $db_requete);
+?>
+				<select name="hrpic_environnement_id">
+<?php while ($ligne = mysqli_fetch_assoc($db_resultat)): ?>
+					<option value="<?php echo $ligne["environnement_id"]; ?>"><?php echo htmlentities($ligne["client"]); ?> - <?php echo htmlentities($ligne["type"]); ?> - <?php echo htmlentities($ligne["machine"]); ?> - <?php echo htmlentities($ligne["version"]); ?></option>
+<?php endwhile; ?>
+				</select>
+			</td>
+			<td>&nbsp;</td>
+			<td><input type="text" name="hrpic_user" size="15" /></td>
+			<td><input type="text" name="hrpic_password" size="15" /></td>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+	</table>
+	<input type="hidden" name="hrpic_action" value="user_add" />
+</form>
+</div>
+<?php
+	mysqli_close($db_connect);
+?>
+</body>
+</html>
+
